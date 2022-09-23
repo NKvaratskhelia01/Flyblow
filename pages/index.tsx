@@ -1,7 +1,9 @@
-import Welcome from "@src/pages/index/Welcome/index";
-
 const Home = () => {
-  return <Welcome />;
+  return (
+    <div>
+      <h1>read</h1>
+    </div>
+  );
 };
 
 export default Home;

@@ -1,7 +1,6 @@
 import {Box} from "@mui/material";
-import {BlackColor, PurpleColor} from "@src/shared/colors";
 
-const BackVideo = () => {
+const BackVideo = ({currColor}:{currColor: string}) => {
   return (
     <Box sx={{overflow: "hidden"}}>
       <Box height="100vh">
@@ -10,8 +9,9 @@ const BackVideo = () => {
           height="100vh"
           position="absolute"
           sx={{
-            backgroundColor: BlackColor,
-            mixBlendMode: "saturation",
+            transition: "all 0.4s",
+            backgroundColor: currColor,
+            mixBlendMode: "darken",
           }}
         />
         <Box
@@ -19,9 +19,9 @@ const BackVideo = () => {
           height="100vh"
           position="absolute"
           sx={{
-            backgroundColor: BlackColor,
-            mixBlendMode: "color-burn",
-            opacity: "0.8",
+            transition: "all 0.4s",
+            backgroundColor: currColor,
+            mixBlendMode: "darken",
           }}
         />
         <Box
@@ -29,12 +29,13 @@ const BackVideo = () => {
           height="100vh"
           position="absolute"
           sx={{
-            backgroundColor: PurpleColor,
+            transition: "all 0.4s",
+            backgroundColor: currColor,
             mixBlendMode: "overlay",
           }}
         />
         <video loop autoPlay muted>
-          <source src="./videos/blueGoo.mp4" />
+          <source src="./videos/goo.mp4" />
         </video>
       </Box>
     </Box>
