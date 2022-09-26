@@ -1,6 +1,6 @@
 import {faMosquito, IconDefinition} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {Box, Stack, Typography} from "@mui/material";
+import {Box, Stack, Typography, useTheme} from "@mui/material";
 import ClapIcon from "@src/images/handClap";
 import {
   BlackColor,
@@ -10,14 +10,15 @@ import {
   WhiteColor
 } from "@src/shared/colors";
 import {Dispatch, SetStateAction} from "react";
+import {setCookie} from "cookies-next";
 
 const BugSelect = ({
-  setColor,
-  currColor
+  setColor
 }: {
   setColor: Dispatch<SetStateAction<string>>;
-  currColor: string;
 }) => {
+  const theme = useTheme();
+
   const BugModal = ({
     text,
     icon,
@@ -31,12 +32,13 @@ const BugSelect = ({
       <Stack
         justifyContent={"center"}
         alignItems={"center"}
-        minHeight="50%"
-        minWidth="30%"
         border={"solid 1px " + color}
         onMouseEnter={() => setColor(color)}
         onMouseLeave={() => setColor(WhiteColor)}
+        onClick={() => setCookie("chosenColor", true)}
         sx={{
+          width: "700px",
+          height: "350px",
           cursor: "pointer",
           backgroundColor: BlackColor,
           transition: "0.3s",
@@ -49,6 +51,9 @@ const BugSelect = ({
             border: "solid 10px " + WhiteColor,
             backgroundColor: GrayColor,
             "& svg, & p": {color: WhiteColor, fill: WhiteColor}
+          },
+          [theme.breakpoints.down("xl")]: {
+            width: "540px"
           }
         }}
       >
@@ -72,6 +77,11 @@ const BugSelect = ({
       height="100vh"
       position="absolute"
       top="0"
+      sx={{
+        [theme.breakpoints.down("md")]: {
+          flexDirection: "column"
+        }
+      }}
     >
       <BugModal
         text="Yeah, i think squitos are pretty cool"

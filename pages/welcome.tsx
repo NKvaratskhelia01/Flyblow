@@ -1,4 +1,4 @@
-import Welcome from "@src/pages/index/Welcome/index";
+import Welcome from "@src/pages/Welcome/index";
 
 const Squitos = () => {
   return <Welcome />;

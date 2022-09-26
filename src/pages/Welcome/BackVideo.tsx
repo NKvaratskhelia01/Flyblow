@@ -11,7 +11,7 @@ const BackVideo = ({currColor}:{currColor: string}) => {
           sx={{
             transition: "all 0.4s",
             backgroundColor: currColor,
-            mixBlendMode: "darken",
+            mixBlendMode: "color-burn",
           }}
         />
         <Box
@@ -21,7 +21,8 @@ const BackVideo = ({currColor}:{currColor: string}) => {
           sx={{
             transition: "all 0.4s",
             backgroundColor: currColor,
-            mixBlendMode: "darken",
+            mixBlendMode: "color-dodge",
+            opacity: "0.2"
           }}
         />
         <Box
