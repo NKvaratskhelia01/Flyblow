@@ -37,8 +37,8 @@ const BugSelect = ({
         onMouseLeave={() => setColor(WhiteColor)}
         onClick={() => setCookie("chosenColor", true)}
         sx={{
-          width: "700px",
-          height: "350px",
+          width: "300px",
+          height: "250px",
           cursor: "pointer",
           backgroundColor: BlackColor,
           transition: "0.3s",
@@ -52,15 +52,37 @@ const BugSelect = ({
             backgroundColor: GrayColor,
             "& svg, & p": {color: WhiteColor, fill: WhiteColor}
           },
-          [theme.breakpoints.down("xl")]: {
+          [theme.breakpoints.up("xl")]: {
+            width: "700px"
+          },
+          [theme.breakpoints.up("sm")]: {
+            height: "350px",
             width: "540px"
           }
         }}
       >
-        <Box sx={{"& svg": {height: "200px"}}}>
+        <Box
+          sx={{
+            "& svg": {
+              height: "120px",
+              [theme.breakpoints.up("sm")]: {
+                height: "200px"
+              }
+            }
+          }}
+        >
           {icon}
         </Box>
-        <Typography textAlign={"center"} color={WhiteColor} fontSize="32px">
+        <Typography
+          textAlign={"center"}
+          color={WhiteColor}
+          sx={{
+            fontSize: "24px",
+            [theme.breakpoints.up("sm")]: {
+              fontSize: "32px"
+            }
+          }}
+        >
           {text}
         </Typography>
       </Stack>

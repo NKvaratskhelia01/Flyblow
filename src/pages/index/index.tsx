@@ -5,185 +5,113 @@ const Index = () => {
     <Particles
         id="tsparticles"
         options={{
-          background: {
-            position: '50% 50%',
-            repeat: 'no-repeat',
-            size: 'cover',
+          "particles": {
+            "number": {
+              "value": 50,
+              "density": {
+                "enable": true,
+                "value_area": 800
+              }
+            },
+            "color": {
+              "value": "#ffffff"
+            },
+            "shape": {
+              "type": "circle",
+              "stroke": {
+                "width": 0,
+                "color": "#000000"
+              },
+              "polygon": {
+                "nb_sides": 5
+              },
+              "image": {
+                "src": "img/github.svg",
+                "width": 100,
+                "height": 100
+              }
+            },
+            "opacity": {
+              "value": 0,
+              "random": false,
+              "anim": {
+                "enable": false,
+                "speed": 1.118881118881119,
+                "opacity_min": 0.1,
+                "sync": false
+              }
+            },
+            "size": {
+              "value": 3,
+              "random": true,
+              "anim": {
+                "enable": false,
+                "speed": 40,
+                "size_min": 0.1,
+                "sync": false
+              }
+            },
+            "line_linked": {
+              "enable": true,
+              "distance": 200,
+              "color": "#ffffff",
+              "opacity": 0.2,
+              "width": 1
+            },
+            "move": {
+              "enable": true,
+              "speed": 3,
+              "direction": "bottom",
+              "random": false,
+              "straight": false,
+              "out_mode": "out",
+              "bounce": false,
+              "attract": {
+                "enable": false,
+                "rotateX": 600,
+                "rotateY": 1200
+              }
+            }
           },
-          fullScreen: {
-            zIndex: -1,
+          "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+              "onhover": {
+                "enable": true,
+                "mode": "grab"
+              },
+              "onclick": {
+                "enable": true,
+                "mode": "bubble"
+              },
+              "resize": true
+            },
+            "modes": {
+              "grab": {
+                "distance": 200,
+                "line_linked": {
+                  "opacity": 0.5
+                }
+              },
+              "bubble": {
+                "distance": 200,
+                "size": 8,
+                "duration": 0.1,
+                "opacity": 0.1838161838161838
+              },
+              "repulse": {
+                "distance": 200,
+                "duration": 0.4
+              },
+              "push": {
+                "particles_nb": 4
+              },
+              "remove": {
+                "particles_nb": 2
+              }
+            }
           },
-          interactivity: {
-            events: {
-              onClick: {
-                enable: true,
-                mode: 'push',
-              },
-              onDiv: {
-                selectors: '#repulse-div',
-                mode: 'repulse',
-              },
-              onHover: {
-                enable: true,
-                mode: 'repulse',
-                parallax: {
-                  force: 60,
-                },
-              },
-            },
-            modes: {
-              bubble: {
-                distance: 400,
-                duration: 2,
-                opacity: 0.8,
-                size: 40,
-              },
-              grab: {
-                distance: 400,
-              },
-              slow: {
-                factor: 1,
-                radius: 0,
-              },
-            },
-          },
-          particles: {
-            color: {
-              value: 'green',
-            },
-            links: {
-              color: {
-                value: 'green',
-              },
-              distance: 150,
-              enable: true,
-              opacity: 0.4,
-              shadow: {
-                color: {
-                  value: 'lime',
-                },
-              },
-            },
-            move: {
-              attract: {
-                rotate: {
-                  x: 600,
-                  y: 1200,
-                },
-              },
-              enable: true,
-            },
-            number: {
-              density: {
-                enable: true,
-              },
-              value: 80,
-            },
-            opacity: {
-              value: {
-                min: 0.1,
-                max: 0.5,
-              },
-              animation: {
-                enable: true,
-                speed: 1,
-                minimumValue: 0.1,
-              },
-            },
-            shape: {
-              options: {
-                character: [
-                  {
-                    fill: true,
-                    font: 'Font Awesome 5 Brands',
-                    style: '',
-                    value: ['🌲'],
-                    weight: '400',
-                  },
-                  {
-                    fill: true,
-                    font: 'Font Awesome 5 Free',
-                    style: '',
-                    value: ['🌳'],
-                    weight: '900',
-                  },
-                  {
-                    fill: true,
-                    font: 'Font Awesome 5 Free',
-                    style: '',
-                    value: ['🍃'],
-                    weight: '900',
-                  },
-                ],
-                char: [
-                  {
-                    fill: true,
-                    font: 'Font Awesome 5 Brands',
-                    style: '',
-                    value: ['🌲'],
-                    weight: '400',
-                  },
-                  {
-                    fill: true,
-                    font: 'Font Awesome 5 Free',
-                    style: '',
-                    value: ['🌳'],
-                    weight: '900',
-                  },
-                  {
-                    fill: true,
-                    font: 'Font Awesome 5 Free',
-                    style: '',
-                    value: ['🍃'],
-                    weight: '900',
-                  },
-                ],
-                polygon: {
-                  sides: 5,
-                },
-                star: {
-                  sides: 5,
-                },
-              },
-              type: 'char',
-            },
-            size: {
-              value: 16,
-              animation: {
-                speed: 10,
-                minimumValue: 10,
-              },
-            },
-            stroke: {
-              width: 1,
-              color: {
-                value: '#ffffff',
-                animation: {
-                  h: {
-                    count: 0,
-                    enable: false,
-                    offset: 0,
-                    speed: 1,
-                    sync: true,
-                  },
-                  s: {
-                    count: 0,
-                    enable: false,
-                    offset: 0,
-                    speed: 1,
-                    sync: true,
-                  },
-                  l: {
-                    count: 0,
-                    enable: false,
-                    offset: 0,
-                    speed: 1,
-                    sync: true,
-                  },
-                },
-              },
-            },
-          },
+          "retina_detect": true
         }}
       />
   );
